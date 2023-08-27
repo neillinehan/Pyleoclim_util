@@ -444,3 +444,27 @@ class Resolution:
             time_header = f'{time_name_str}'
 
         return time_header, value_header
+    
+class MultipleResolution:
+    '''MultipleResoluion objects store several resolutions from different Series or ensemble members from 
+    a posterior distribution (e.g. age model, Bayesian climate reconstruction, etc). 
+    '''
+    def __init__(self, resolution_list):
+        ''' Object for multiple PSD.
+
+        This object stores several PSDs from different Series or ensemble members in an age model.         
+       
+        Parameters
+        ----------
+        
+        beta_est_res : numpy.array
+        
+            Results of the beta estimation calculation
+        
+        See also
+        --------
+        
+        pyleoclim.core.psds.PSD.beta_est : Calculates the scaling exponent (i.e., the slope in a log-log plot) of the spectrum (beta)
+
+        '''
+        self.resolution_list = resolution_list

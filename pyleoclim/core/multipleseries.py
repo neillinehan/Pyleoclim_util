@@ -11,6 +11,7 @@ from ..core.correns import CorrEns
 from ..core.scalograms import MultipleScalogram
 from ..core.psds import MultiplePSD
 from ..core.multivardecomp import MultivariateDecomp
+from ..core.resolutions import MultipleResolution
 
 import warnings
 import numpy as np
@@ -2335,6 +2336,31 @@ class MultipleSeries:
             raise ValueError('Unknown statistic',stacklevel=2)
             
         return np.array(res)
+    
+    def resolution_placeholder(self):
+        """Creates a MultipleResolution object containing Resolution objects for each series in the MultipleSeries object
+        
+        Returns
+        -------
+        
+        resolution : MultipleResolution
+            MultipleResolution object
+
+        See also
+        --------
+
+        pyleoclim.core.Series.resolution
+
+        pyleoclim.utils.tsbase.resolution
+
+        """
+
+        resolution_list = []
+        
+        for series in self.series_list:
+            resolution.append(series.resolution())
+
+        resolution = MultipleResolution(resolution_list=resolution_list)
     
     def to_json(self, path=None):
         '''
