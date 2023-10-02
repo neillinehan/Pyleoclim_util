@@ -22,7 +22,7 @@ Science-based training materials are also available from the [paleoHackathon rep
 
 ### Versions
 
-See our [releases page](https://github.com/LinkedEarth/Pyleoclim_util/releases) for details on what's included in each version.
+See our [releases page](https://github.com/LinkedEarth/Pyleoclim_util/releases) for details on what is included in each version.
 
 ### Documentation
 
